@@ -2,7 +2,7 @@
 
 std::string ParseCSV(const std::string& s) {
     std::string ans;
-    size_t token_size = 0;
+    int token_size = 0;
     for (size_t i = 0; i < s.length(); i++) {
         if (s[i] == '0' || s[i] == '1') {
             token_size++;
