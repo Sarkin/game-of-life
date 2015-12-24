@@ -13,7 +13,7 @@ class RowThread;
 
 class ParallelSimulator: public Simulator {
 public:
-    friend RowThread;
+    friend class RowThread;
 
     ParallelSimulator();
     ParallelSimulator(const State& initial, int thread_cnt);
