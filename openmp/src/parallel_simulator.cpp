@@ -35,7 +35,7 @@ void ParallelSimulator::Simulate(int steps) {
         #pragma omp single
             step++;
         #pragma omp barrier
-        #pragma omp for nowait
+        #pragma omp
         for (int row = 0; row < next_state_.n(); row++) {
             for (int column = 0; column < next_state_.m(); column++) {
                 if (state_.DoesNextGenerationChange(row, column)) {
@@ -45,7 +45,6 @@ void ParallelSimulator::Simulate(int steps) {
                 }
             }
         }
-        #pragma omp barrier
         #pragma omp single
             swap(state_, next_state_);
     }
